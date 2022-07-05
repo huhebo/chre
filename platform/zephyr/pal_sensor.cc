@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,28 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "chre/platform/system_timer.h"
 
-namespace chre {
+#include "chre/pal/sensor.h"
 
-SystemTimer::SystemTimer() {}
-
-SystemTimer::~SystemTimer() {}
-
-bool SystemTimer::init() {
-  return true;
+const struct chrePalSensorApi *chrePalSensorGetApi(
+    uint32_t requestedApiVersion) {
+  // This stub implementation of the CHRE PAL returns nullptr to indicate that
+  // it is not supplied by this platform.
+  return nullptr;
 }
-
-bool SystemTimer::set(SystemTimerCallback *callback, void *data,
-    Nanoseconds delay) {
-  /* TODO */
-  return true;
-}
-
-bool SystemTimer::cancel() {
-  /* TODO */
-  return true;
-}
-
-
-}  // namespace chre

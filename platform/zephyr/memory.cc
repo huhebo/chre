@@ -27,8 +27,17 @@ void *memoryAlloc(size_t size) {
   return k_heap_alloc(&chre_mem, size, K_NO_WAIT);
 }
 
+void *palSystemApiMemoryAlloc(size_t size) {
+  return k_heap_alloc(&chre_mem, size, K_NO_WAIT);
+}
+
 void memoryFree(void *pointer) {
   k_heap_free(&chre_mem, pointer);
 }
+
+void palSystemApiMemoryFree(void *pointer) {
+  k_heap_free(&chre_mem, pointer);
+}
+
 
 }  // namespace chre

@@ -40,6 +40,9 @@ if(CONFIG_CHRE)
       "power_control_manager.cc"
       "system_time.cc"
       "system_timer.cc"
+      "platform_sensor.cc"
+      "pal_sensor.cc"
+      "platform_sensor_type_helpers.cc"
       "${CHRE_DIR}/core/debug_dump_manager.cc"
       "${CHRE_DIR}/core/event.cc"
       "${CHRE_DIR}/core/event_loop.cc"
@@ -53,6 +56,8 @@ if(CONFIG_CHRE)
       "${CHRE_DIR}/core/timer_pool.cc"
       "${CHRE_DIR}/platform/shared/version.cc"
       "${CHRE_DIR}/platform/shared/system_time.cc"
+      "${CHRE_DIR}/platform/shared/platform_sensor_manager.cc"
+      "${CHRE_DIR}/platform/shared/pal_system_api.cc"
       "${CHRE_DIR}/util/dynamic_vector_base.cc"
   )
   zephyr_linker_sources(SECTIONS linker_chre.ld)

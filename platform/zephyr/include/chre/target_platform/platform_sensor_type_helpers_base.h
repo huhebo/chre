@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,28 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "chre/platform/system_timer.h"
+
+#ifndef CHRE_TARGET_PLATFORM_SENSOR_TYPE_HELPERS_BASE_H_
+#define CHRE_TARGET_PLATFORM_SENSOR_TYPE_HELPERS_BASE_H_
 
 namespace chre {
 
-SystemTimer::SystemTimer() {}
-
-SystemTimer::~SystemTimer() {}
-
-bool SystemTimer::init() {
-  return true;
-}
-
-bool SystemTimer::set(SystemTimerCallback *callback, void *data,
-    Nanoseconds delay) {
-  /* TODO */
-  return true;
-}
-
-bool SystemTimer::cancel() {
-  /* TODO */
-  return true;
-}
-
+/**
+ * Can be used to expose static methods to the PlatformSensorTypeHelpers class
+ * for use in working with vendor sensor types. Currently, this is unused in the
+ * Linux implementation as sensors are not supported.
+ */
+class PlatformSensorTypeHelpersBase {};
 
 }  // namespace chre
+
+#endif  // CHRE_TARGET_PLATFORM_SENSOR_TYPE_HELPERS_BASE_H_
